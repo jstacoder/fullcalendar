@@ -13,4 +13,6 @@ env:
   - CMD=test
   - CMD=lint
 
+before_install: npm install
+
 script: npm run $CMD -- --travis
