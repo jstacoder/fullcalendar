@@ -1,3 +1,4 @@
+import { getDayHeaderEls } from '../lib/day-grid'
 
 describe('basic view rendering', function() {
 
@@ -13,7 +14,7 @@ describe('basic view rendering', function() {
 
     it('should have days ordered sun to sat', function() {
       initCalendar()
-      var fc = $(currentCalendar.el).find('.fc-day-header')
+      var fc = getDayHeaderEls()
       expect(fc[0]).toHaveClass('fc-sun')
       expect(fc[1]).toHaveClass('fc-mon')
       expect(fc[2]).toHaveClass('fc-tue')
@@ -32,7 +33,7 @@ describe('basic view rendering', function() {
 
     it('should have days ordered sat to sun', function() {
       initCalendar()
-      var fc = $(currentCalendar.el).find('.fc-day-header')
+      var fc = getDayHeaderEls()
       expect(fc[0]).toHaveClass('fc-sat')
       expect(fc[1]).toHaveClass('fc-fri')
       expect(fc[2]).toHaveClass('fc-thu')
